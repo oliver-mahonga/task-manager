@@ -11,9 +11,9 @@ public class TaskManagerApp {
     private static JTable table;
     private static TableRowSorter<DefaultTableModel> sorter;
     private static JLabel statsLabel;
-    private static JProgressBar progressBar; // The new progress bar
+    private static JProgressBar progressBar; 
 
-    // --- ELITE DARK PALETTE ---
+    
     private static final Color DARK_BG = new Color(33, 37, 41);
     private static final Color DARKER_BG = new Color(21, 25, 28);
     private static final Color ACCENT_BLUE = new Color(13, 110, 253);
@@ -35,7 +35,7 @@ public class TaskManagerApp {
         frame.getContentPane().setBackground(DARK_BG);
         frame.setLayout(new BorderLayout(10, 10));
 
-        // --- TOP BAR ---
+       
         JPanel topPanel = new JPanel(new BorderLayout(20, 0));
         topPanel.setBackground(DARKER_BG);
         topPanel.setBorder(BorderFactory.createEmptyBorder(15, 25, 15, 25));
@@ -54,7 +54,7 @@ public class TaskManagerApp {
         topPanel.add(searchField, BorderLayout.EAST);
         frame.add(topPanel, BorderLayout.NORTH);
 
-        // --- CENTER (Table) ---
+       
         String[] columns = {"ID", "Task Description", "Status"};
         model = new DefaultTableModel(columns, 0) { @Override public boolean isCellEditable(int r, int c) { return false; } };
         table = new JTable(model);
@@ -84,12 +84,12 @@ public class TaskManagerApp {
         scrollPane.setBorder(BorderFactory.createLineBorder(DARKER_BG, 15));
         frame.add(scrollPane, BorderLayout.CENTER);
 
-        // --- BOTTOM BAR (Inputs, Progress, & Stats) ---
+        
         JPanel bottomContainer = new JPanel();
         bottomContainer.setLayout(new BoxLayout(bottomContainer, BoxLayout.Y_AXIS));
         bottomContainer.setBackground(DARKER_BG);
 
-        // Progress Bar Panel
+       
         JPanel progressPanel = new JPanel(new BorderLayout());
         progressPanel.setBackground(DARKER_BG);
         progressPanel.setBorder(BorderFactory.createEmptyBorder(10, 50, 5, 50));
@@ -101,7 +101,7 @@ public class TaskManagerApp {
         progressBar.setFont(new Font("SansSerif", Font.BOLD, 12));
         progressPanel.add(progressBar, BorderLayout.CENTER);
 
-        // Buttons Panel
+      
         JPanel inputPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 10));
         inputPanel.setBackground(DARKER_BG);
 
@@ -119,7 +119,7 @@ public class TaskManagerApp {
         inputPanel.add(delBtn);
         inputPanel.add(clearBtn);
 
-        // Stats Panel
+       
         statsLabel = new JLabel("Status: Loading...");
         statsLabel.setForeground(Color.LIGHT_GRAY);
         statsLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -130,7 +130,7 @@ public class TaskManagerApp {
         bottomContainer.add(statsLabel);
         frame.add(bottomContainer, BorderLayout.SOUTH);
 
-        // --- ACTIONS ---
+       
         searchField.getDocument().addDocumentListener(new DocumentListener() {
             public void insertUpdate(DocumentEvent e) { filter(); }
             public void removeUpdate(DocumentEvent e) { filter(); }
@@ -207,14 +207,14 @@ public class TaskManagerApp {
             }
         } catch (Exception e) {}
         
-        // Update Stats and Progress Bar
+        
         int total = pending + completed;
         int percent = (total == 0) ? 0 : (int) ((double) completed / total * 100);
         
         progressBar.setValue(percent);
         progressBar.setString(percent + "% Completed");
         
-        // Color transition for the bar
+        
         if (percent == 100) progressBar.setForeground(SUCCESS_GREEN);
         else if (percent > 50) progressBar.setForeground(ACCENT_BLUE);
         else progressBar.setForeground(WARNING_YELLOW);
