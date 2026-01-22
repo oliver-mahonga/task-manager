@@ -1,4 +1,17 @@
 🚀 Task Master EliteA sleek, high-performance Java Swing desktop application for task management, featuring a local SQLite database and a modern "Midnight" dark-mode interface.✨ Features🌑 Elite Dark Mode: A professional midnight-themed UI designed for focus.📊 Real-time Statistics: Instant tracking of pending vs. completed tasks at the bottom of the app.🔍 Live Search: Filter through your tasks instantly as you type.✅ Status Toggling: Single-click logic to switch tasks between Pending and Completed.🗄️ Persistence: All tasks are saved locally in a tasks.db file using SQLite.🛡️ Safety First: Confirmation prompts for destructive actions like "Clear All."🛠️ Installation & Setup1. PrerequisitesEnsure you have the Java Development Kit (JDK) installed ($11$ or higher recommended).2. Project StructureYour folder should look like this:PlaintextMyJavaApp/
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/24a69593-cbf0-4b5f-b6ef-cf8c09010045" width="100%" alt="Task Master Elite Main Interface">
+</p>
+
+<p align="center">
+<img width="1363" height="719" alt="Image" src="https://github.com/user-attachments/assets/e722740b-3234-4b1b-964f-19b59d4688d8" />
+
+
+<p align="center">
+<img width="1363" height="719" alt="Image" src="https://github.com/user-attachments/assets/dd7a38cd-e2fe-4c97-9f91-3c9bde324d59" />
+</p>
+
 ├── lib/
 │   ├── sqlite-jdbc.jar
 │   ├── slf4j-api.jar
