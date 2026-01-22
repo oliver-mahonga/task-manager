@@ -23,3 +23,14 @@ javac -cp "lib/*" -d build src/TaskManagerApp.java
 jar cvfe TaskMaster.jar TaskManagerApp -C build .
 🚀 How to RunOnce you have built the JAR file, simply run:Bashjava -jar TaskMaster.jar
 🎮 How to UseAdd a Task: Type your task in the input field at the bottom and click Add Task.Complete a Task: Select a row in the table and click Check/Uncheck. The status will turn green!Search: Use the top-right search bar to find specific tasks instantly.Delete: Select a task and hit Delete, or use Clear All to start fresh.🔧 Technologies UsedLanguage: Java (Swing API)Database: SQLite (via JDBC)Logging: SLF4J (Nop implementation)Build Tool: Manual JAR manifest packaging📜 LicenseThis project is open-source and free to use.
+
+
+
+
+
+
+## RUN COMMAND
+
+javac -cp "lib/*" -d build src/TaskManagerApp.java
+jar cvfe TaskMaster.jar TaskManagerApp -C build .
+java -jar TaskMaster.jar
